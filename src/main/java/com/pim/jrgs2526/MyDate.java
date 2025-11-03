@@ -34,4 +34,18 @@ public class MyDate {
             return null;
         }
     }
+
+
+
+    public MyDate(){
+
+    }
+    public MyDate(int day, Months month, int year){
+
+    }
+    public void setDay(int day){}
+
+    public void setMonth(Months month){}
+
+    public void setYear(int year){}
 }
