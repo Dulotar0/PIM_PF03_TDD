@@ -24,21 +24,6 @@ jobs:
       - name: Run Maven tests
         run: mvn -B clean test --file pom.xml
 
-      # 4. Generar reportes HTML y site
-      - name: Generate HTML report
-        if: always()
-        run: mvn surefire-report:report
-      
-      # 5. Subir los reportes de tests como artefactos
-      - name: Upload test reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results
-          path: |
-            target/surefire-reports/*.xml
-            target/surefire-reports-html/
-
       # 6. Mostrar un resumen rápido de todos los tests en logs
       - name: Show test summary
         if: always()
